@@ -24,8 +24,10 @@ namespace IndiaMirror
             services.AddDbContextPool<AppDbContext>(
                options => options.UseSqlServer(Configuration.GetConnectionString("IndiamirrorDbConnection")));
             services.AddRazorPages();
+            services.AddSession();
             services.AddControllersWithViews();
             services.AddScoped<IUserRepository, SQLUserRepository>();
+            services.AddScoped<IAdvertisementRepository, SQLAdvertisementRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +48,7 @@ namespace IndiaMirror
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
 
             app.UseAuthorization();
 

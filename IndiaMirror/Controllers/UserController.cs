@@ -12,9 +12,11 @@ namespace IndiaMirror.Controllers
     {
         const string SessionId= "_UserId";
         private readonly IUserRepository _userRepo;
-        public UserController(IUserRepository userRepo)
+        private readonly IAdvertisementRepository _advertisementRepository;
+        public UserController(IUserRepository userRepo,IAdvertisementRepository advertisementRepo)
         {
             _userRepo = userRepo;
+            _advertisementRepository = advertisementRepo; 
         }
         public IActionResult Index()
         {
@@ -61,6 +63,24 @@ namespace IndiaMirror.Controllers
             }
             ViewBag.error = "Enter a Valid Credential !";
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult AddAdvertisement()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddAdvertisement(Advertisement advertisement)
+        {
+            if(advertisement.start_time.Date != advertisement.end_time.Date)
+            {
+                ViewBag.error = "Time Period must be within same day.";
+                return View();
+            }
+            _advertisementRepository.Add(advertisement);
+            return RedirectToAction("index");
         }
     }
 }

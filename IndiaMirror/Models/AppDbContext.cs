@@ -14,5 +14,7 @@ namespace IndiaMirror.Models
         }
 
         public DbSet<Users> Users { get; set; }
+
+        public DbSet<Advertisement> Advertisement { get; set; }
     }
 }
