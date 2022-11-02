@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj": {}
+    "C:\\Users\\sahil\\source\\repos\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj": {}
   },
   "projects": {
-    "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj": {
+    "C:\\Users\\sahil\\source\\repos\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj",
+        "projectUniqueName": "C:\\Users\\sahil\\source\\repos\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj",
         "projectName": "IndiaMirror",
-        "projectPath": "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj",
-        "packagesPath": "C:\\Users\\Visha\\.nuget\\packages\\",
-        "outputPath": "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\obj\\",
+        "projectPath": "C:\\Users\\sahil\\source\\repos\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj",
+        "packagesPath": "C:\\Users\\sahil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sahil\\source\\repos\\IndiaMirror\\IndiaMirror\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Visha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sahil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.28, )"
@@ -77,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     }

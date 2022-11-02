@@ -21,7 +21,7 @@ namespace IndiaMirror.Controllers
             {
                 category = "";
             }
-            string baseUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=5f2b8d447dd44d59953f9c711bc916bb" + category;
+            string baseUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=5f2b8d447dd44d59953f9c711bc916bb&pagesize=100" + category;
             //Have your using statements within a try/catch block
             try
             {

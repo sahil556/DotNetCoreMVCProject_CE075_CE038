@@ -40,6 +40,11 @@ namespace IndiaMirror.Models
             return context.Users.FirstOrDefault(m => m.Id == Id);
         }
 
+        public Users GetUserByEmail(String email)
+        {
+            return context.Users.FirstOrDefault(m => m.Email == email);
+        }
+
         public Users Update(Users UsersChanges)
         {
             var user = context.Users.Attach(UsersChanges);
