@@ -42,7 +42,7 @@ namespace IndiaMirror.Models
 
         IEnumerable<Advertisement> IAdvertisementRepository.GetAdvertisements_admin(string status)
         {
-            return context.Advertisement.Where(m => m.status == status);
+            return context.Advertisement.Where(m => m.status == status && m.payment == "Done");
         }
 
         IEnumerable<Advertisement> IAdvertisementRepository.GetAdvertisements_user(int userId)

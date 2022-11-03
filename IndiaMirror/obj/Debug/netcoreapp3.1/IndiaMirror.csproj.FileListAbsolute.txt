@@ -329,3 +329,10 @@ E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\IndiaMirror.dll
 E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\IndiaMirror.pdb
 E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\IndiaMirror.genruntimeconfig.cache
 E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\Razor\Views\User\AddAdvertisement.cshtml.g.cs
+E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\Razor\Views\User\EditAdvertisement.cshtml.g.cs
+E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\Razor\Views\User\Details.cshtml.g.cs
+E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\Razor\Views\User\Delete.cshtml.g.cs
+E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\Razor\Views\User\Payment.cshtml.g.cs
+E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\Razor\Views\Admin\index.cshtml.g.cs
+E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
+E:\SEM-5\wad_Lab\IndiaMirror\IndiaMirror\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Reject.cshtml.g.cs

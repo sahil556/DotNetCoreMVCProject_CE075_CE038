@@ -6,13 +6,13 @@
 
 <h1>index</h1>
 
-<p>
-    <a asp-action="AddAdvertisement">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
-           
+            <th>
+                @Html.DisplayNameFor(model => model.user_id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.image_url)
             </th>
@@ -31,14 +31,21 @@
             <th>
                 @Html.DisplayNameFor(model => model.status)
             </th>
-        
+            <th>
+                @Html.DisplayNameFor(model => model.reason)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.start_time)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.end_time)
             </th>
-           
+            <th>
+                @Html.DisplayNameFor(model => model.ctr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.views)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.payment)
             </th>
@@ -48,7 +55,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            
+            <td>
+                @Html.DisplayFor(modelItem => item.user_id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.image_url)
             </td>
@@ -67,24 +76,27 @@
             <td>
                 @Html.DisplayFor(modelItem => item.status)
             </td>
-           
+            <td>
+                @Html.DisplayFor(modelItem => item.reason)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.start_time)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.end_time)
             </td>
-          
+            <td>
+                @Html.DisplayFor(modelItem => item.ctr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.views)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.payment)
             </td>
             <td>
-
-                <a asp-action="EditAdvertisement" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> 
-                @if(item.payment == "False") {  <a asp-action = "payment" asp-route-id = "@item.Id" >| Make Payment </a >}
-                
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Reject" asp-route-id="@item.Id">Reject</a>
             </td>
         </tr>
 }
