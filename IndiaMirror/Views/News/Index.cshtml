@@ -1,5 +1,5 @@
 ﻿@using IndiaMirror.Dataclasses;
-@model IEnumerable<IndiaMirror.Models.Advertisement>
+@model IList<IndiaMirror.Models.Advertisement>
 @{
     ViewData["Title"] = "View";
 }
@@ -7,7 +7,7 @@
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">NewsDaily</a>
+            <a class="navbar-brand" href="#">IndiaMirror</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -32,11 +32,39 @@
         </div>
     </nav>
     <div class='container' style="margin-top: 55px;">
-        <h1 class="text-center" style="margin: 35px 0px;">NewsDaily - Top @ViewBag.category Headlines</h1>
+        <h1 class="text-center" style="margin: 35px 0px;">IndiaMirror - Top @ViewBag.category Headlines</h1>
         <div class='row'>
-          
+            @{
+                var count = -1;
+                var advertiseno = 0;
+                var TotalAd = Model.Count();
+            }
+
             @foreach (Articles article in ViewBag.articles)
-            { 
+            {
+                count++;
+                if(count % 2 == 0 && advertiseno < TotalAd)
+                {
+                  
+                    <div class='col-md-4'>
+                        <div class='my-3'>
+                            <div class="card">
+                                <div style="display:flex; position:absolute; justify-content:flex-end; right:0">
+                                    <span class=" badge rounded-pill bg-primary" style="left:85%; z-index:1">
+                                        Advertise
+                                    </span>
+                                </div>
+                                <img src=@Model.ElementAt(advertiseno).image_url class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">@Model.ElementAt(advertiseno).title</h5> Inbox
+                                    <p class="card-text">@Model.ElementAt(advertiseno).description</p>
+                                    <a rel="noreferrer" href=@Model.ElementAt(advertiseno).business_url target="_blank" class="btn btn-sm btn-dark">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    advertiseno++;
+                }
                 String author = article.author == null ? "UnKnown" : article.author;
                 if (author.Length == 0)
                     author = "UnKnown";

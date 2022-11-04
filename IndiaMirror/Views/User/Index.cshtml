@@ -5,7 +5,7 @@
 }
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark  bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">NewsDaily</a>
+        <a class="navbar-brand" href="#">IndiaMirror</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -72,12 +72,13 @@
                 <div class="d-flex align-items-center">
                     <img src=@Html.DisplayFor(modelItem => item.image_url)
                          alt=""
-                         style="width: 60px; height: 45px"
+                         style="width: 80px; height: 60px"
                          class="rounded" />
                 </div>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.business_url)
+                <button type="button" class="btn btn-dark"><a target="_blank" href=@Html.DisplayFor(modelItem => item.business_url) style="text-decoration:none; color:white">Visit</a></button>
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.title)

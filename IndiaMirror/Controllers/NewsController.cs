@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text.Json;
 using IndiaMirror.Dataclasses;
 using IndiaMirror.Models;
+using IndiaMirror.Services;
 
 namespace IndiaMirror.Controllers
 {
@@ -14,12 +15,14 @@ namespace IndiaMirror.Controllers
     {
         private readonly IAdvertisementRepository _advertisementRepository;
         public NewsController(IAdvertisementRepository advertisementRepo)
-        { 
+        {
             _advertisementRepository = advertisementRepo;
         }
+       
         public async Task<IActionResult> Index([FromQuery(Name = "Category")] string category)
         {
-            var Model = _advertisementRepository.GetAdvertisements(category); 
+            var Model = _advertisementRepository.GetAdvertisements(category);
+            Model = ShuffleAdvertisement.Shuffle(Model, Model.Count());
             if(category != null)
             {
                 ViewBag.category = category;

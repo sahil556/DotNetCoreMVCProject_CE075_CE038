@@ -21,6 +21,10 @@ namespace IndiaMirror.Controllers
         public IActionResult Index()
         {
             int id = HttpContext.Session.GetInt32(SessionId) ?? 0;
+            if(id == 0)
+            {
+                return RedirectToAction("Index", "User");
+            }
             if (id != -1)
             {
                 return new NotFoundResult();

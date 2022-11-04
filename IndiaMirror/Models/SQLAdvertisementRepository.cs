@@ -37,7 +37,8 @@ namespace IndiaMirror.Models
 
         IEnumerable<Advertisement> IAdvertisementRepository.GetAdvertisements(string category)
         {
-            return context.Advertisement.Where(m => m.category == category);
+            DateTime ctime = DateTime.Now;
+            return context.Advertisement.Where(m => m.category == category && m.status == "Accepted" && ctime.CompareTo(m.start_time) > 0 && ctime.CompareTo(m.end_time) < 0);
         }
 
         IEnumerable<Advertisement> IAdvertisementRepository.GetAdvertisements_admin(string status)
