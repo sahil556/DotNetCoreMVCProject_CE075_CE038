@@ -6,17 +6,24 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Text.Json;
 using IndiaMirror.Dataclasses;
+using IndiaMirror.Models;
 
 namespace IndiaMirror.Controllers
 {
     public class NewsController : Controller
-    {   
+    {
+        private readonly IAdvertisementRepository _advertisementRepository;
+        public NewsController(IAdvertisementRepository advertisementRepo)
+        { 
+            _advertisementRepository = advertisementRepo;
+        }
         public async Task<IActionResult> Index([FromQuery(Name = "Category")] string category)
         {
-
+            var Model = _advertisementRepository.GetAdvertisements(category); 
             if(category != null)
             {
                 ViewBag.category = category;
+
                 category = "&category=" + category;
             }
             else
@@ -24,7 +31,7 @@ namespace IndiaMirror.Controllers
                 ViewBag.category = "";
                 category = "";
             }
-            string baseUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=5f2b8d447dd44d59953f9c711bc916bb&pagesize=20" + category;
+            string baseUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=5f2b8d447dd44d59953f9c711bc916bb&pagesize=6" + category;
             //Have your using statements within a try/catch block
             try
             {
@@ -67,7 +74,7 @@ namespace IndiaMirror.Controllers
                 Console.WriteLine(exception);
             }
 
-            return View();
+            return View(Model);
         }
     }
 }
