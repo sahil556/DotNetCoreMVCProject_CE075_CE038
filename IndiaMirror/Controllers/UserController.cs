@@ -22,6 +22,8 @@ namespace IndiaMirror.Controllers
         {
            
             int id = HttpContext.Session.GetInt32(SessionId) ?? 0;
+            if (id == -1)
+                return new NotFoundResult();
             if (id == 0)
             {
                 return RedirectToAction("Login");
@@ -57,6 +59,11 @@ namespace IndiaMirror.Controllers
         [HttpPost]
         public IActionResult Login(String email, String password)
         { 
+            if(email == "admin@gmail.com" && password== "admin123")
+            {
+                HttpContext.Session.SetInt32(SessionId, -1);
+                return RedirectToAction("Index", "Admin");
+            }
             Users user = _userRepo.GetUserByEmail(email);
             if(user != null && user.Password == password)
             {
@@ -188,5 +195,11 @@ namespace IndiaMirror.Controllers
             return RedirectToAction("index");
         }
         
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index");
+        }
        }
 }

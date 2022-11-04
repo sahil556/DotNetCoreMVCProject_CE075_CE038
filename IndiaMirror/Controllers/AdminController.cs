@@ -4,11 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+
 
 namespace IndiaMirror.Controllers
 {
     public class AdminController : Controller
     {
+        const string SessionId = "_UserId";
         private readonly IAdvertisementRepository _advertisementRepository;
 
         public AdminController(IAdvertisementRepository advertisementRepo)
@@ -17,6 +20,11 @@ namespace IndiaMirror.Controllers
         }
         public IActionResult Index()
         {
+            int id = HttpContext.Session.GetInt32(SessionId) ?? 0;
+            if (id != -1)
+            {
+                return new NotFoundResult();
+            }
             var Model = _advertisementRepository.GetAdvertisements_admin("pending");
             return View(Model);
         }
