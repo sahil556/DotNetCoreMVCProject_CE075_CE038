@@ -25,6 +25,7 @@ namespace IndiaMirror.Controllers
         public ViewResult Edit(int id)
         {
             Advertisement ad = _advertisementRepository.GetAdvertisement(id);
+            ViewBag.accept = "Accepted";
             return View(ad);
         }
 
@@ -44,6 +45,7 @@ namespace IndiaMirror.Controllers
         public ViewResult Reject(int id)
         {
             Advertisement ad = _advertisementRepository.GetAdvertisement(id);
+            ViewBag.reject = "Rejected";
             return View(ad);
         }
 

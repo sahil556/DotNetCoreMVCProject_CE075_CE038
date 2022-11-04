@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj": {}
+    "C:\\Users\\sahil\\source\\repos\\IndiaMirror-repo\\IndiaMirror\\IndiaMirror.csproj": {}
   },
   "projects": {
-    "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj": {
+    "C:\\Users\\sahil\\source\\repos\\IndiaMirror-repo\\IndiaMirror\\IndiaMirror.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj",
+        "projectUniqueName": "C:\\Users\\sahil\\source\\repos\\IndiaMirror-repo\\IndiaMirror\\IndiaMirror.csproj",
         "projectName": "IndiaMirror",
-        "projectPath": "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\IndiaMirror.csproj",
-        "packagesPath": "C:\\Users\\Visha\\.nuget\\packages\\",
-        "outputPath": "E:\\SEM-5\\wad_Lab\\IndiaMirror\\IndiaMirror\\obj\\",
+        "projectPath": "C:\\Users\\sahil\\source\\repos\\IndiaMirror-repo\\IndiaMirror\\IndiaMirror.csproj",
+        "packagesPath": "C:\\Users\\sahil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sahil\\source\\repos\\IndiaMirror-repo\\IndiaMirror\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Visha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sahil\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     }

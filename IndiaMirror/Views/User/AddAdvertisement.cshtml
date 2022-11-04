@@ -4,7 +4,7 @@
     ViewData["Title"] = "AddAdvertisement";
 }
 
-<h1>AddAdvertisement</h1>
+<h1>Create Your Advertisement</h1>
 
 <h4>Advertisement</h4>
 <hr />
@@ -14,44 +14,44 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <label asp-for="title" class="control-label"></label>
+                <label asp-for="title" class="control-label" style="font-size:18px">Title</label>
                 <input asp-for="title" class="form-control" />
                 <span asp-validation-for="title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="image_url" class="control-label"></label>
+                <label asp-for="image_url" class="control-label" style="font-size:18px">Image URL</label>
                 <input asp-for="image_url" class="form-control" />
                 <span asp-validation-for="image_url" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="business_url" class="control-label"></label>
+                <label asp-for="business_url" class="control-label" style="font-size:18px">Business URL</label>
                 <input asp-for="business_url" class="form-control" />
                 <span asp-validation-for="business_url" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="description" class="control-label"></label>
+                <label asp-for="description" class="control-label" style="font-size:18px">Description</label>
                 <input asp-for="description" class="form-control" />
                 <span asp-validation-for="description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="category" class="control-label"></label>
+                <label asp-for="category" class="control-label" style="font-size:18px">Category</label>
                 <input asp-for="category" class="form-control" />
                 <span asp-validation-for="category" class="text-danger"></span>
             </div>
             
            
             <div class="form-group">
-                <label asp-for="start_time" class="control-label"></label>
+                <label asp-for="start_time" class="control-label" style="font-size:18px">Start Time</label>
                 <input asp-for="start_time" class="form-control" />
                 <span asp-validation-for="start_time" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="end_time" class="control-label"></label>
-                <input asp-for="end_time" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}" class="form-control" />
+                <label asp-for="end_time" class="control-label" style="font-size:18px">End Time</label>
+                <input asp-for="end_time"  class="form-control" />
                 <span asp-validation-for="end_time" class="text-danger"></span>
             </div>
-           
+            <br />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

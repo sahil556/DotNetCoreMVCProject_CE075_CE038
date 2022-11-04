@@ -42,6 +42,7 @@ namespace IndiaMirror.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Create(Users user)
         {
@@ -95,8 +96,8 @@ namespace IndiaMirror.Controllers
                 return View();
             }
             _advertisementRepository.Add(advertisement);
-            String url = "payment/" + id.ToString();
-            return RedirectToRoute(url);
+            //String url = "payment/" + id.ToString();
+            return RedirectToAction("payment",new { Id = advertisement.Id });
         }
 
         [HttpGet]
@@ -117,7 +118,7 @@ namespace IndiaMirror.Controllers
                 ad.start_time = advertisement.start_time;
                 ad.end_time = advertisement.end_time;
                 ad.title = advertisement.title;
-                ad.description = advertisement.description;
+            ad.description = advertisement.description;
                 _advertisementRepository.Update(ad);
             
             return RedirectToAction("index");
@@ -186,5 +187,6 @@ namespace IndiaMirror.Controllers
 
             return RedirectToAction("index");
         }
+        
        }
 }
