@@ -38,7 +38,15 @@ namespace IndiaMirror.Models
         IEnumerable<Advertisement> IAdvertisementRepository.GetAdvertisements(string category)
         {
             DateTime ctime = DateTime.Now;
-            return context.Advertisement.Where(m => m.category == category && m.status == "Accepted" && ctime.CompareTo(m.start_time) > 0 && ctime.CompareTo(m.end_time) < 0);
+            IEnumerable<Advertisement> advertisements = context.Advertisement.Where(m => m.category == category && m.status == "Accepted" && ctime.CompareTo(m.start_time) > 0 && ctime.CompareTo(m.end_time) < 0);
+            int size = advertisements.Count();
+            for(int i=0;i<size;i++)
+            {
+                advertisements.ElementAt(i).views += 1;
+            }
+            context.UpdateRange(advertisements);
+            context.SaveChanges();
+            return advertisements;
         }
 
         IEnumerable<Advertisement> IAdvertisementRepository.GetAdvertisements_admin(string status)
@@ -57,6 +65,16 @@ namespace IndiaMirror.Models
             Advertisement.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
             return AdvertisementChanges;
+        }
+
+
+        void IAdvertisementRepository.AddCtr(int Id)
+        {
+            Advertisement advertisement = context.Advertisement.FirstOrDefault(m => m.Id == Id);
+            advertisement.ctr += 1;
+            var ad = context.Advertisement.Attach(advertisement);
+            ad.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }

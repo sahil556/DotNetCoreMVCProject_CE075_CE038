@@ -79,5 +79,11 @@ namespace IndiaMirror.Controllers
 
             return View(Model);
         }
+
+        [HttpPost]
+        public void AddCtr(int Id)
+        {
+            _advertisementRepository.AddCtr(Id);
+        }
     }
 }

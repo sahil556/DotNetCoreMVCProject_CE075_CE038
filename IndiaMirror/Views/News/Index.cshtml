@@ -58,7 +58,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">@Model.ElementAt(advertiseno).title</h5> Inbox
                                     <p class="card-text">@Model.ElementAt(advertiseno).description</p>
-                                    <a rel="noreferrer" href=@Model.ElementAt(advertiseno).business_url target="_blank" class="btn btn-sm btn-dark">Read More</a>
+                                    <!--  -->
+                                    <a rel="noreferrer" target="_blank"  href=#@Model.ElementAt(advertiseno).business_url  onclick="return AddCTR(event)" AdId=@Model.ElementAt(advertiseno).Id  class="btn btn-sm btn-dark">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -95,3 +96,17 @@
         </div>
     </div>
 </body>
+
+<script>
+  
+    async function AddCTR(event) {
+        let blogid = event.target.getAttribute('AdId');
+        url = "https://localhost:44339/News/AddCtr/" + blogid;
+        const response = await fetch(url, {
+            method: 'POST', 
+            mode: 'cors', 
+            cache: 'no-cache',
+            credentials: 'same-origin', 
+        });
+    }
+</script>

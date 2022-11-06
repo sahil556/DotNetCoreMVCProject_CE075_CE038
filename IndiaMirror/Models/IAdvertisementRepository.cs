@@ -17,5 +17,7 @@ namespace IndiaMirror.Models
         Advertisement Update(Advertisement AdvertisementChanges);
 
         Advertisement Delete(int Id);
+
+        void AddCtr(int Id);
     }
 }
